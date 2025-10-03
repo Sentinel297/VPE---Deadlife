@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FactionDef ParentName="FactionBase" Abstract="True" Name="ShamblersSTNLBase">
+    <pawnSingular>shambler</pawnSingular>
+    <pawnsPlural>shamblers</pawnsPlural>
+    <categoryTag>ShamblersSTNL</categoryTag>
+	<canMakeRandomly>true</canMakeRandomly>
+	<humanlikeFaction>false</humanlikeFaction>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>2000</configurationListOrderPriority>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <fixedName>Allied Shamblers</fixedName>
+    <factionIconPath>UI_DeadlifeSTNL/Abilities/ShambleAOE</factionIconPath>
+    <techLevel>Spacer</techLevel>
+    <hidden>true</hidden>
+    <rescueesCanJoin>true</rescueesCanJoin>
+    <autoFlee>false</autoFlee>
+	<permanentEnemyToEveryoneExcept>
+      <li>PlayerTribe</li>
+      <li>PlayerColony</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Beggars</li>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">ResearchExpedition</li>
+    </permanentEnemyToEveryoneExcept>
+	<hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+  </FactionDef>
+
+  <FactionDef ParentName="ShamblersSTNLBase">
+    <defName>AlliedShamblers</defName>
+    <label>Allied Shamblers</label>
+	<description>This faction is hidden and used as a fix to the shamblerified people not attacking, why is it needed? Even I don't know why shamblers broke because of that ability but this faction makes them work again!</description>
+  </FactionDef>
+</Defs>

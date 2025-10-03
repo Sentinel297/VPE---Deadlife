@@ -1,0 +1,140 @@
+<Defs>
+	
+ 
+ 
+<AbilityDef>
+    <defName>ReleaseDeadlifeDustSTNLPATH</defName>
+    <label>release deadlife dust</label>
+    <description>Release a cloud of dust-like substance that will settle on nearby corpses and raise them as shamblers. The shamblers will only attack your enemies. Deadlife dust is made of nano-scale archites that penetrate and reanimate dead tissue at the cellular level.</description>
+    <iconPath>UI/Abilities/ReleaseDeadlifeDust</iconPath>
+    <cooldownTicksRange>12000</cooldownTicksRange>
+    <showPsycastEffects>false</showPsycastEffects>
+    <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <hotKey>Misc1</hotKey>
+    <hostile>false</hostile>
+    <targetRequired>false</targetRequired>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <label>release deadlife dust</label>
+      <drawAimPie>false</drawAimPie>
+      <warmupTime>0.5</warmupTime>
+      <violent>false</violent>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+      <soundCast>DeadlifeRelease</soundCast>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityReleaseGas">
+        <gasType>DeadlifeDust</gasType>
+        <cellsToFill>18</cellsToFill>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <HediffDef>
+<hediffClass>HediffWithComps</hediffClass>
+<defName>DeadSTNLA</defName>
+<label>Death</label>
+<description>This creature is dead.</description>
+<initialSeverity>0.5</initialSeverity>
+<lethalSeverity>0.95</lethalSeverity>
+<maxSeverity>1</maxSeverity>
+<comps>
+<li Class="HediffCompProperties_SeverityPerSecond">
+<severityPerSecondRange>98~99</severityPerSecondRange>
+<!--  10 to 15 seconds  -->
+</li>
+</comps>
+<stages>
+<li>
+<minSeverity>0</minSeverity>
+<label>Dying</label>
+</li>
+<li>
+<minSeverity>0.95</minSeverity>
+<label>Dead</label>
+</li>
+</stages>
+</HediffDef>
+  
+
+ <HediffDef>
+      <defName>DeadlifesacksSTNL</defName>
+      <label>Deadlife sacks</label>
+      <description>This person possesses the ability to spew out deadlife dust from their body.</description>
+      <descriptionShort>This person possesses the ability to spew out deadlife dust from their body.</descriptionShort>
+      <defaultLabelColor>(0.7, 0.7, 0.7)</defaultLabelColor>
+      <scenarioCanAdd>true</scenarioCanAdd>
+      <initialSeverity>1</initialSeverity> 
+      <minSeverity>0</minSeverity>
+      <maxSeverity>1</maxSeverity>
+      <isBad>false</isBad>
+      <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+      <stages>
+	         <li>
+         </li>
+      </stages>
+	   <abilities>
+      <li>ReleaseDeadlifeDustSTNLPATH</li>
+    </abilities>
+   </HediffDef>
+
+<HediffDef>
+	<hediffClass>HediffWithComps</hediffClass>
+      <defName>PsychicBurnoutSTNL</defName>
+      <label>Psychic Burnout</label>
+      <description>This person has lost the ability to use psychic abilities for a while due to overworking themselves.</description>
+      <descriptionShort>This person has lost the ability to use psychic abilities for a while due to overworking themselves.</descriptionShort>
+      <defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+      <scenarioCanAdd>false</scenarioCanAdd>
+      <initialSeverity>1</initialSeverity> 
+      <isBad>false</isBad>
+      <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+<stages>
+ <li>
+<statFactors>
+<PsychicSensitivity>0</PsychicSensitivity>
+</statFactors>
+</li>
+</stages>
+<comps>
+        <li Class="HediffCompProperties_Disappears">
+          <disappearsAfterTicks>
+            <min>60000</min>
+            <max>60000</max>
+          </disappearsAfterTicks>
+		  <showRemainingTime>True</showRemainingTime>
+        </li>
+</comps>
+   </HediffDef> 	
+
+ <HediffDef>
+    <defName>DeadlifeRegenSTNL</defName>
+    <label>Dead-life</label>
+    <description>This person has absorbed deadlife dust from a corpse, enhancing their regeneration and reducing their feeling of pain for a day.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+	<defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
+    <everCurableByItem>false</everCurableByItem>
+    <duplicationAllowed>false</duplicationAllowed>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <stages>
+      <li>
+        <painFactor>0.75</painFactor>
+       <regeneration>100</regeneration>
+      </li>
+    </stages>
+    <comps>
+            <li Class="HediffCompProperties_Disappears">
+          <disappearsAfterTicks>
+            <min>60000</min>
+            <max>60000</max>
+          </disappearsAfterTicks>
+		  <showRemainingTime>True</showRemainingTime>
+        </li> 
+    </comps>
+  </HediffDef>
+
+</Defs>

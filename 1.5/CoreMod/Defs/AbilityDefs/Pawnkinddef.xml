@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+   <PawnKindDef Name="HoraxianBaseSTNL" Abstract="True">
+    <race>Human</race>
+    <initialWillRange>0~1</initialWillRange>
+    <initialResistanceRange>55~65</initialResistanceRange>
+    <styleItemTags>
+      <li>
+        <tag>Cultist</tag>
+        <baseWeight>5</baseWeight>
+        <weightFactor>1</weightFactor>
+      </li>
+    </styleItemTags>
+    <startingHediffs>
+      <li>
+        <def>Inhumanized</def>
+      </li>
+    </startingHediffs>
+	 <maxGenerationAge>35</maxGenerationAge>
+	 <xenotypeSet>
+      <xenotypeChances Inherit="false">
+        <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">999</Neanderthal>
+      </xenotypeChances>
+	  </xenotypeSet>
+    <requiredWorkTags>
+      <li>Violent</li>
+    </requiredWorkTags>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="HoraxianBaseSTNL">
+    <defName>Horaxian_CorpseSTNL</defName>
+    <label>Corpse</label>
+    <combatPower>90</combatPower>
+    <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+    <studiableAsPrisoner>true</studiableAsPrisoner>
+    <isGoodPsychicRitualInvoker>true</isGoodPsychicRitualInvoker>
+    <disallowedTraitsWithDegree>
+      <PsychicSensitivity>-2</PsychicSensitivity>
+    </disallowedTraitsWithDegree>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>Torso</bodyPartGroup>
+        <alternateTagChoices>
+          <li>
+            <tag>Robe</tag>
+            <chance>1</chance>
+          </li>
+        </alternateTagChoices>
+      </li>
+      <li>
+        <bodyPartGroup>FullHead</bodyPartGroup>
+        <requiredTag>HoraxianCeremonial</requiredTag>
+        <useRandomStyleDef>true</useRandomStyleDef>
+      </li>
+      <li>
+        <color>(85, 85, 85)</color>
+      </li>
+    </specificApparelRequirements>
+    <weaponTags>
+      <li>NerveSpiker</li>
+    </weaponTags>
+    <weaponMoney>0</weaponMoney>
+  </PawnKindDef>
+
+</Defs>
