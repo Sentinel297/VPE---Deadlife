@@ -136,5 +136,49 @@
         </li> 
     </comps>
   </HediffDef>
+  
+<HediffDef>
+	<defName>VPE_Deadlife_Crimson_Plague_STNL</defName>
+	<label>Dustborne Necrosis</label>
+	<description>This creature has been poisoned by a crimson deadlife dust cloud, it will eventually turn into a shambler if this condition isn't tended fast enough.\n\nTending this condition will cause it to disappear.</description>
+	<hediffClass>VPE_Deadlife.Hediff_CrimsonPlague</hediffClass>
+	<initialSeverity>0.015</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0.8, 0, 0)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>true</isBad>
+	<tendable>true</tendable>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<!-- <statFactors> -->
+			<!-- <Fertility>0</Fertility> -->
+			<!-- </statFactors> -->
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<!-- <li Class="HediffCompProperties_Disappears"> -->
+		<!-- <disappearsAfterTicks>20000</disappearsAfterTicks> -->
+		<!-- <showRemainingTime>true</showRemainingTime> -->
+		<!-- </li> -->
+		<li Class="HediffCompProperties_TendDuration">
+			<baseTendDurationHours>12</baseTendDurationHours>
+			<severityPerDayTended>-0.53</severityPerDayTended>
+		</li>
+		<li Class="HediffCompProperties_Immunizable">
+			<severityPerDayNotImmune>1</severityPerDayNotImmune>
+			<severityPerDayImmune>-1</severityPerDayImmune>
+			<immunityPerDaySick>0.0001</immunityPerDaySick>
+			<immunityPerDayNotSick>-0.0001</immunityPerDayNotSick>
+		</li>
+	</comps>
+</HediffDef>
 
 </Defs>

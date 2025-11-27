@@ -85,48 +85,48 @@
     </modExtensions>
   </VEF.Abilities.AbilityDef>
   
-  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <defName>VPE_CorpseEmergenceSTNL</defName>
-    <label>Deadlife Harvest</label>
-    <description>Transform the targeted corpse into deadlife dust used to obtain health regeneration and slightly enhanced pain tolerance.</description>
-    <iconPath>UI_DeadlifeSTNL/Abilities/Harvest</iconPath>
-    <castTime>150</castTime>
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_CorpseEmergenceSTNL</defName>
+	<label>Deadlife Harvest</label>
+	<description>Transform the targeted corpse into deadlife dust used to obtain health regeneration and slightly enhanced pain tolerance.</description>
+	<iconPath>UI_DeadlifeSTNL/Abilities/Harvest</iconPath>
+	<castTime>150</castTime>
 	<durationTime>60000</durationTime>
-    <targetMode>Pawn</targetMode>
-    <range>14</range>
+	<targetMode>Pawn</targetMode>
+	<range>14</range>
 	<chance>0</chance>
 	<castSound>Explosion_FirefoamPopper</castSound>
 	<needsTicking>true</needsTicking>
-<abilityClass>VPE_Deadlife.Ability_ConsumeBodiesSTNL</abilityClass>
-<targetingParameters>
-			<canTargetLocations>false</canTargetLocations>
-			<canTargetSelf>false</canTargetSelf>
-			<canTargetAnimals>true</canTargetAnimals>
-			<canTargetPawns>true</canTargetPawns>
-			<canTargetHumans>true</canTargetHumans>
-			<canTargetItems>true</canTargetItems>
-			<canTargetMechs>false</canTargetMechs>
-			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-		</targetingParameters>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_DeadlifeSTNL</path>
-        <level>2</level>
-        <order>1</order>
-        <psyfocusCost>0.10</psyfocusCost>
-        <entropyGain>25</entropyGain>
-		<prerequisites>
-          <li>VPE_DeadlifesacksSTNL</li>
-		  <li>VPE_ShamblerWipeSTNL</li>
-        </prerequisites>
-      </li>
-	  <li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
-<onCaster>
-<li>DeadlifeRegenSTNL</li>
-</onCaster>
-</li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
+	<abilityClass>VPE_Deadlife.Ability_ConsumeBodiesSTNL</abilityClass>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetItems>true</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+		<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+	</targetingParameters>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_DeadlifeSTNL</path>
+			<level>2</level>
+			<order>1</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>25</entropyGain>
+			<prerequisites>
+				<li>VPE_DeadlifesacksSTNL</li>
+				<li>VPE_ShamblerWipeSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
+			<onCaster>
+				<li>DeadlifeRegenSTNL</li>
+			</onCaster>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
 
 
 <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
@@ -441,6 +441,42 @@
     </modExtensions>
   </VEF.Abilities.AbilityDef>
 	 
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_Deadlife_CrimsonDeadlifeBurst_STNL</defName>
+	<label>Crimson Deadlife Burst</label>
+	<description>Form a cloud of altered deadlife dust that will infect the living with Dustborne Necrosis, causing them to turn into shamblers should the infection reach critical levels.</description>
+	<iconPath>UI_DeadlifeSTNL/Abilities/CrimsonDeadlifeBurst</iconPath>
+	<castTime>60</castTime>
+	<range>15.5</range>
+	<radius>9.9</radius>
+	<castSound>Psycast_Skip_Exit</castSound>
+	<targetMode>Location</targetMode>
+	<targetingParameters>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+		<!-- <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable> -->
+	</targetingParameters>
+	<abilityClass>VPE_Deadlife.Ability_CrimsonDeadlifeBurst</abilityClass>
+	<needsTicking>true</needsTicking>
+	<!-- <chance>0</chance> -->
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_DeadlifeSTNL</path>
+			<level>6</level>
+			<order>1</order>
+			<psyfocusCost>0.09</psyfocusCost>
+			<entropyGain>75</entropyGain>
+			<prerequisites>
+				<li>VPE_zombifyAOESTNL</li>
+			</prerequisites>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
 	 
 <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
     <defName>VPE_CrimsonStormSTNL</defName>
@@ -461,6 +497,7 @@
         <entropyGain>0</entropyGain>
         <prerequisites>
           <li>VPE_ResurrectSTNL</li>
+		  <li>VPE_Deadlife_CrimsonDeadlifeBurst_STNL</li>
         </prerequisites>
       </li>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">

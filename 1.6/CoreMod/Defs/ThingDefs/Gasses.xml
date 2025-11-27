@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef>
+		<defName>Shell_Deadlife_ReleasingSTNL</defName>
+		<label>deadlife capsule</label>
+		<selectable>false</selectable>
+		<tickerType>Normal</tickerType>
+		<thingClass>ThingWithComps</thingClass>
+		<useHitPoints>false</useHitPoints>
+		<graphicData>
+			<texPath>Things/Projectile/LandedDeadlifeShell</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<comps>
+			<li Class="CompProperties_GrayStatueGasSTNL">
+				<gas>DeadlifeDust</gas>
+				<triggerRadiusRange>200</triggerRadiusRange>
+			</li>
+			<li Class="CompProperties_DestroyAfterDelay">
+				<delayTicks>600</delayTicks>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!-- Actual gasses -->
+	
+<ThingDef Name="VPE_Deadlife_CrimsonDeadlifeDustBase_STNL" Abstract="True">
+	<thingClass>VPE_Deadlife.CustomGas_Deadlife_STNL</thingClass>
+	<label>gas</label>
+	<category>Gas</category>
+	<altitudeLayer>Gas</altitudeLayer>
+	<useHitPoints>false</useHitPoints>
+	<tickerType>Normal</tickerType>
+    <graphicData>
+      <graphicClass>Graphic_Gas</graphicClass>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+</ThingDef>
+
+<ThingDef ParentName="VPE_Deadlife_CrimsonDeadlifeDustBase_STNL">
+	<defName>VPE_Deadlife_CrimsonDeadlifeDust_STNL</defName>
+	<label>Crimson deadlife dust</label>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <drawSize>4</drawSize>
+      <color>(0.5, 0.2, 0.2, 1)</color>
+    </graphicData>
+	<gas>
+		<expireSeconds>19~21</expireSeconds>
+		<rotationSpeed>10</rotationSpeed>
+	</gas>
+</ThingDef>
+</Defs>
