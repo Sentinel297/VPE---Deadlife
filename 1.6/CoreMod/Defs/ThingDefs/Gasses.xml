@@ -52,4 +52,42 @@
 		<rotationSpeed>10</rotationSpeed>
 	</gas>
 </ThingDef>
+
+<!-- Corpse converter -->
+
+<ThingDef ParentName="EtherealThingBase">
+	<defName>VPE_Deadlife_CorpseConverter_STNL</defName>
+	<label>Deadlife particles</label>
+	<thingClass>VPE_Deadlife.Thing_ShamblerConverter</thingClass>
+	<tickerType>Normal</tickerType>
+	<drawerType>RealtimeOnly</drawerType>
+	<drawOffscreen>true</drawOffscreen>
+	<!-- <category>PsychicEmitter</category> -->
+	<altitudeLayer>MoteOverheadLow</altitudeLayer>
+	<selectable>false</selectable>
+	<building>
+		<isInert>true</isInert>
+		<claimable>true</claimable>
+		<deconstructible>false</deconstructible>
+	</building>
+	<graphicData>
+		<graphicClass>Graphic_Single</graphicClass>
+		<texPath>UI_DeadlifeSTNL/None</texPath>
+		<!-- <shaderType>MoteGlowDistorted</shaderType> -->
+		<!-- <color>(255, 255, 245)</color> -->
+		<!-- <drawSize>6</drawSize> -->
+	</graphicData>
+	<!-- <comps> -->
+	<!-- <li Class="CompProperties_Glower"> -->
+	<!-- <glowRadius>30</glowRadius> -->
+	<!-- <overlightRadius>18</overlightRadius> -->
+	<!-- <glowColor>(217,217,208,0)</glowColor> -->
+	<!-- </li> -->
+	<!-- <li Class="CompProperties_HeatPusher"> -->
+	<!-- <compClass>CompHeatPusherPowered</compClass> -->
+	<!-- <heatPerSecond>20</heatPerSecond> -->
+	<!-- <heatPushMaxTemperature>60</heatPushMaxTemperature> -->
+	<!-- </li> -->
+	<!-- </comps> -->
+</ThingDef>
 </Defs>

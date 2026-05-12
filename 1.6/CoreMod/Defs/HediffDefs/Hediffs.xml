@@ -3,113 +3,115 @@
  
  
 <AbilityDef>
-    <defName>ReleaseDeadlifeDustSTNLPATH</defName>
-    <label>release deadlife dust</label>
-    <description>Release a cloud of dust-like substance that will settle on nearby corpses and raise them as shamblers. The shamblers will only attack your enemies. Deadlife dust is made of nano-scale archites that penetrate and reanimate dead tissue at the cellular level.</description>
-    <iconPath>UI/Abilities/ReleaseDeadlifeDust</iconPath>
-    <cooldownTicksRange>12000</cooldownTicksRange>
-    <showPsycastEffects>false</showPsycastEffects>
-    <sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
-    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <hotKey>Misc1</hotKey>
-    <hostile>false</hostile>
-    <targetRequired>false</targetRequired>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <label>release deadlife dust</label>
-      <drawAimPie>false</drawAimPie>
-      <warmupTime>0.5</warmupTime>
-      <violent>false</violent>
-      <targetable>false</targetable>
-      <targetParams>
-        <canTargetSelf>true</canTargetSelf>
-      </targetParams>
-      <soundCast>DeadlifeRelease</soundCast>
-    </verbProperties>
-    <comps>
-      <li Class="CompProperties_AbilityReleaseGas">
-        <gasType>DeadlifeDust</gasType>
-        <cellsToFill>18</cellsToFill>
-      </li>
-    </comps>
-  </AbilityDef>
+	<defName>ReleaseDeadlifeDustSTNLPATH</defName>
+	<label>release deadlife dust</label>
+	<description>Release a cloud of dust-like substance that will settle on nearby corpses and raise them as shamblers. The shamblers will only attack your enemies. Deadlife dust is made of nano-scale archites that penetrate and reanimate dead tissue at the cellular level.</description>
+	<iconPath>UI/Abilities/ReleaseDeadlifeDust</iconPath>
+	<cooldownTicksRange>12000</cooldownTicksRange>
+	<showPsycastEffects>false</showPsycastEffects>
+	<sendMessageOnCooldownComplete>false</sendMessageOnCooldownComplete>
+	<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+	<hotKey>Misc1</hotKey>
+	<hostile>false</hostile>
+	<targetRequired>false</targetRequired>
+	<verbProperties>
+		<verbClass>Verb_CastAbility</verbClass>
+		<label>release deadlife dust</label>
+		<drawAimPie>false</drawAimPie>
+		<warmupTime>0.5</warmupTime>
+		<violent>false</violent>
+		<targetable>false</targetable>
+		<targetParams>
+			<canTargetSelf>true</canTargetSelf>
+		</targetParams>
+		<soundCast>DeadlifeRelease</soundCast>
+	</verbProperties>
+	<comps>
+		<li Class="CompProperties_AbilityReleaseGas">
+			<gasType>DeadlifeDust</gasType>
+			<cellsToFill>18</cellsToFill>
+		</li>
+	</comps>
+</AbilityDef>
   
-  <HediffDef>
-<hediffClass>HediffWithComps</hediffClass>
-<defName>DeadSTNLA</defName>
-<label>Death</label>
-<description>This creature is dead.</description>
-<initialSeverity>0.5</initialSeverity>
-<lethalSeverity>0.95</lethalSeverity>
-<maxSeverity>1</maxSeverity>
-<comps>
-<li Class="HediffCompProperties_SeverityPerSecond">
-<severityPerSecondRange>98~99</severityPerSecondRange>
-<!--  10 to 15 seconds  -->
-</li>
-</comps>
-<stages>
-<li>
-<minSeverity>0</minSeverity>
-<label>Dying</label>
-</li>
-<li>
-<minSeverity>0.95</minSeverity>
-<label>Dead</label>
-</li>
-</stages>
+<HediffDef>
+	<hediffClass>HediffWithComps</hediffClass>
+	<defName>DeadSTNLA</defName>
+	<label>Death</label>
+	<description>This creature is dead.</description>
+	<initialSeverity>0.5</initialSeverity>
+	<lethalSeverity>0.95</lethalSeverity>
+	<maxSeverity>1</maxSeverity>
+	<comps>
+		<li Class="HediffCompProperties_SeverityPerSecond">
+			<severityPerSecondRange>98~99</severityPerSecondRange>
+			<!--  10 to 15 seconds  -->
+		</li>
+	</comps>
+	<stages>
+		<li>
+			<minSeverity>0</minSeverity>
+			<label>Dying</label>
+		</li>
+		<li>
+			<minSeverity>0.95</minSeverity>
+			<label>Dead</label>
+		</li>
+	</stages>
 </HediffDef>
   
 
- <HediffDef>
-      <defName>DeadlifesacksSTNL</defName>
-      <label>Deadlife sacks</label>
-      <description>This person possesses the ability to spew out deadlife dust from their body.</description>
-      <descriptionShort>This person possesses the ability to spew out deadlife dust from their body.</descriptionShort>
-      <defaultLabelColor>(0.7, 0.7, 0.7)</defaultLabelColor>
-      <scenarioCanAdd>true</scenarioCanAdd>
-      <initialSeverity>1</initialSeverity> 
-      <minSeverity>0</minSeverity>
-      <maxSeverity>1</maxSeverity>
-      <isBad>false</isBad>
-      <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
-      <stages>
-	         <li>
+<HediffDef>
+	<defName>DeadlifesacksSTNL</defName>
+	<label>Deadlife sacks</label>
+	<description>This person possesses the ability to spew out deadlife dust from their body.</description>
+	<descriptionShort>This person possesses the ability to spew out deadlife dust from their body.</descriptionShort>
+	<defaultLabelColor>(0.7, 0.7, 0.7)</defaultLabelColor>
+	<scenarioCanAdd>true</scenarioCanAdd>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<isBad>false</isBad>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<alwaysAllowMothball>true</alwaysAllowMothball>
+	<stages>
+		<li>
          </li>
-      </stages>
-	   <abilities>
-      <li>ReleaseDeadlifeDustSTNLPATH</li>
-    </abilities>
-   </HediffDef>
+	</stages>
+	<abilities>
+		<li>ReleaseDeadlifeDustSTNLPATH</li>
+	</abilities>
+</HediffDef>
 
 <HediffDef>
 	<hediffClass>HediffWithComps</hediffClass>
-      <defName>PsychicBurnoutSTNL</defName>
-      <label>Psychic Burnout</label>
-      <description>This person has lost the ability to use psychic abilities for a while due to overworking themselves.</description>
-      <descriptionShort>This person has lost the ability to use psychic abilities for a while due to overworking themselves.</descriptionShort>
-      <defaultLabelColor>(1, 0, 0)</defaultLabelColor>
-      <scenarioCanAdd>false</scenarioCanAdd>
-      <initialSeverity>1</initialSeverity> 
-      <isBad>false</isBad>
-      <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
-<stages>
- <li>
-<statFactors>
-<PsychicSensitivity>0</PsychicSensitivity>
-</statFactors>
-</li>
-</stages>
-<comps>
-        <li Class="HediffCompProperties_Disappears">
-          <disappearsAfterTicks>
-            <min>60000</min>
-            <max>60000</max>
-          </disappearsAfterTicks>
-		  <showRemainingTime>True</showRemainingTime>
-        </li>
-</comps>
-   </HediffDef> 	
+	<defName>PsychicBurnoutSTNL</defName>
+	<label>Psychic burnout</label>
+	<description>This person has lost the ability to use psychic abilities for a while due to overworking themselves.</description>
+	<descriptionShort>This person has lost the ability to use psychic abilities for a while due to overworking themselves.</descriptionShort>
+	<defaultLabelColor>(1, 0, 0)</defaultLabelColor>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<initialSeverity>1</initialSeverity>
+	<isBad>false</isBad>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<alwaysAllowMothball>true</alwaysAllowMothball>
+	<stages>
+		<li>
+			<statFactors>
+				<PsychicSensitivity>0</PsychicSensitivity>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>
+				<min>60000</min>
+				<max>60000</max>
+			</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+	</comps>
+</HediffDef> 	
 
  <HediffDef>
     <defName>DeadlifeRegenSTNL</defName>
@@ -120,6 +122,7 @@
     <everCurableByItem>false</everCurableByItem>
     <duplicationAllowed>false</duplicationAllowed>
     <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<alwaysAllowMothball>true</alwaysAllowMothball>
     <stages>
       <li>
         <painFactor>0.75</painFactor>
@@ -137,15 +140,15 @@
     </comps>
   </HediffDef>
   
-<HediffDef>
+  <HediffDef>
 	<defName>VPE_Deadlife_Crimson_Plague_STNL</defName>
-	<label>Dustborne Necrosis</label>
+	<label>Dustborne necrosis</label>
 	<description>This creature has been poisoned by a crimson deadlife dust cloud, it will eventually turn into a shambler if this condition isn't tended fast enough.\n\nTending this condition will cause it to disappear.</description>
 	<hediffClass>VPE_Deadlife.Hediff_CrimsonPlague</hediffClass>
 	<initialSeverity>0.015</initialSeverity>
 	<minSeverity>0</minSeverity>
 	<maxSeverity>1</maxSeverity>
-	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<lethalSeverity>1</lethalSeverity>
 	<defaultLabelColor>(0.8, 0, 0)</defaultLabelColor>
 	<makesSickThought>false</makesSickThought>
 	<scenarioCanAdd>false</scenarioCanAdd>
@@ -153,6 +156,7 @@
 	<tendable>true</tendable>
 	<everCurableByItem>false</everCurableByItem>
 	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+		<alwaysAllowMothball>true</alwaysAllowMothball>
 	<modExtensions>
 	</modExtensions>
 	<stages>
@@ -163,7 +167,7 @@
 		</li>
 	</stages>
 	<comps>
-		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
 		<!-- <li Class="HediffCompProperties_Disappears"> -->
 		<!-- <disappearsAfterTicks>20000</disappearsAfterTicks> -->
 		<!-- <showRemainingTime>true</showRemainingTime> -->
@@ -178,6 +182,37 @@
 			<immunityPerDaySick>0.0001</immunityPerDaySick>
 			<immunityPerDayNotSick>-0.0001</immunityPerDayNotSick>
 		</li>
+	</comps>
+</HediffDef>
+  
+<HediffDef>
+	<defName>VPE_Deadlife_PermanentShambler_STNL</defName>
+	<label>Permanent shambler</label>
+	<description>This shambler's decaying progress has been halted.</description>
+	<hediffClass>VPE_Deadlife.Hediff_PermanentShambler</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0.7, 0.7, 0.7)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<tendable>false</tendable>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<alwaysAllowMothball>true</alwaysAllowMothball>
+	<modExtensions>
+	</modExtensions>
+	<stages>
+		<li>
+			<!-- <statFactors> -->
+			<!-- <Fertility>0</Fertility> -->
+			<!-- </statFactors> -->
+		</li>
+	</stages>
+	<comps>
+
 	</comps>
 </HediffDef>
 
