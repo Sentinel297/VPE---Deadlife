@@ -1,0 +1,9 @@
+<LanguageData>
+<VPE_Deadlife_CrimsonAffliction_ToggleLabel_STNL>Crimson affliction</VPE_Deadlife_CrimsonAffliction_ToggleLabel_STNL>
+<VPE_Deadlife_DeadlifeServant_Kill_STNL>Kill servant</VPE_Deadlife_DeadlifeServant_Kill_STNL>
+<!-- Settings -->
+<VPE_Deadlife_CorpseSkip_STNL>Corpse skip:</VPE_Deadlife_CorpseSkip_STNL>
+<VPE_Deadlife_CorpseSkip_ForceBaseliners_STNL>Should the corpses summoned by this ability always be baseliners?</VPE_Deadlife_CorpseSkip_ForceBaseliners_STNL>
+<VPE_Deadlife_ResurrectionSkills_STNL>Resurrection skills</VPE_Deadlife_ResurrectionSkills_STNL>
+<VPE_Deadlife_ResurrectionSkills_BurnoutToggle_STNL>Should they cause psychic burnout?</VPE_Deadlife_ResurrectionSkills_BurnoutToggle_STNL>
+</LanguageData>

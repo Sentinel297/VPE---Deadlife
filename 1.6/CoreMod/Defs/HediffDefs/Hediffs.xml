@@ -1,6 +1,4 @@
 <Defs>
-	
- 
  
 <AbilityDef>
 	<defName>ReleaseDeadlifeDustSTNLPATH</defName>
@@ -206,6 +204,45 @@
 	</modExtensions>
 	<stages>
 		<li>
+			<!-- <statFactors> -->
+			<!-- <Fertility>0</Fertility> -->
+			<!-- </statFactors> -->
+		</li>
+	</stages>
+	<comps>
+
+	</comps>
+</HediffDef>
+
+<!-- Deadlife Servitude -->
+
+<HediffDef>
+	<defName>VPE_Deadlife_WorkerShambler_Base_STNL</defName>
+	<label>Deadlife servant</label>
+	<description>This shambler retained its intelligence after rising from the dead.\n\nServants are able to complete work, their proficiency depends on their master's psychic sensitivity.</description>
+	<hediffClass>VPE_Deadlife.Hediff_DeadlifeServant</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<minSeverity>0</minSeverity>
+	<maxSeverity>1</maxSeverity>
+	<!-- <lethalSeverity>1</lethalSeverity> -->
+	<defaultLabelColor>(0.7, 0.7, 0.7)</defaultLabelColor>
+	<makesSickThought>false</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<tendable>false</tendable>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<alwaysAllowMothball>true</alwaysAllowMothball>
+	<modExtensions>
+		<li Class="VPE_Deadlife.DeadlifeServant_ModExt">
+			<needsToMax>
+				<li MayRequire="rim.job.world">Sex</li>
+			</needsToMax>
+		</li>
+	</modExtensions>
+	<stages>
+		<li>
+			<!-- <regeneration>20</regeneration> -->
 			<!-- <statFactors> -->
 			<!-- <Fertility>0</Fertility> -->
 			<!-- </statFactors> -->

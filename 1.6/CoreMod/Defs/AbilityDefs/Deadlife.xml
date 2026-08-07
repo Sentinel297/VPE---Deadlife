@@ -1,135 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Defs>	
-
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_DeadlifesacksSTNL</defName>
-	<label>Deadlife sacks</label>
-	<description>Alter yourself or your target to obtain the ability to spew out deadlife dust.</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/Sacks</iconPath>
-	<castTime>120</castTime>
-	<targetMode>Pawn</targetMode>
-	<range>14</range>
-	<castSound>Explosion_FirefoamPopper</castSound>
-	<needsTicking>true</needsTicking>
-	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
-	<targetingParameters>
-		<canTargetLocations>False</canTargetLocations>
-		<canTargetSelf>True</canTargetSelf>
-		<canTargetAnimals>false</canTargetAnimals>
-		<canTargetPawns>True</canTargetPawns>
-		<canTargetHumans>True</canTargetHumans>
-		<canTargetMechs>false</canTargetMechs>
-	</targetingParameters>
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>1</level>
-			<order>1</order>
-			<psyfocusCost>0.40</psyfocusCost>
-			<entropyGain>25</entropyGain>
-		</li>
-		<li Class="VEF.Abilities.AbilityExtension_Hediff">
-			<hediff>DeadlifesacksSTNL</hediff>
-		</li>
-		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
-			<effecterDef>DeadlifeReleasing</effecterDef>
-			<maintainForTicks>60</maintainForTicks>
-			<scale>1</scale>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
-  
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_ShamblerWipeSTNL</defName>
-	<label>Shambler extinction</label>
-	<description>Kill all shamblers belonging to the caster's faction.</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/Shamblerwipe</iconPath>
-	<castTime>180</castTime>
-	<chance>0</chance>
-	<durationTime>0</durationTime>
-	<targetMode>Self</targetMode>
-	<range>0</range>
-	<castSound>VoidTerrorCast</castSound>
-	<needsTicking>true</needsTicking>
-	<abilityClass>VPE_Deadlife.Ability_WipeShambler</abilityClass>
-	<hasAoE>false</hasAoE>
-	<radius>0</radius>
-	<targetingParameters>
-		<canTargetLocations>true</canTargetLocations>
-		<canTargetSelf>false</canTargetSelf>
-		<canTargetAnimals>true</canTargetAnimals>
-		<canTargetPawns>true</canTargetPawns>
-		<canTargetHumans>true</canTargetHumans>
-		<canTargetItems>true</canTargetItems>
-		<canTargetMechs>false</canTargetMechs>
-		<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-	</targetingParameters>
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>1</level>
-			<order>1</order>
-			<psyfocusCost>0</psyfocusCost>
-			<entropyGain>0</entropyGain>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
-  
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_CorpseEmergenceSTNL</defName>
-	<label>Deadlife harvest</label>
-	<description>Transform the targeted corpse into deadlife dust used to obtain health regeneration and slightly enhanced pain tolerance.</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/Harvest</iconPath>
-	<castTime>150</castTime>
-	<durationTime>60000</durationTime>
-	<targetMode>Pawn</targetMode>
-	<range>14</range>
-	<chance>0</chance>
-	<castSound>Explosion_FirefoamPopper</castSound>
-	<needsTicking>true</needsTicking>
-	<abilityClass>VPE_Deadlife.Ability_ConsumeBodiesSTNL</abilityClass>
-	<targetingParameters>
-		<canTargetLocations>false</canTargetLocations>
-		<canTargetSelf>false</canTargetSelf>
-		<canTargetAnimals>true</canTargetAnimals>
-		<canTargetPawns>true</canTargetPawns>
-		<canTargetHumans>true</canTargetHumans>
-		<canTargetItems>true</canTargetItems>
-		<canTargetMechs>false</canTargetMechs>
-		<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-	</targetingParameters>
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>2</level>
-			<order>1</order>
-			<psyfocusCost>0.10</psyfocusCost>
-			<entropyGain>25</entropyGain>
-			<prerequisites>
-				<li>VPE_DeadlifesacksSTNL</li>
-				<li>VPE_ShamblerWipeSTNL</li>
-			</prerequisites>
-		</li>
-		<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
-			<onCaster>
-				<li>DeadlifeRegenSTNL</li>
-			</onCaster>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
-
-
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <defName>VPE_CorpseAOESTNL</defName>
-    <label>Corpse skip</label>
-    <description>Skip 9 corpses from distant burial grounds to the selected area.</description>
-    <iconPath>UI_DeadlifeSTNL/Abilities/Grave</iconPath>
-    <abilityClass>VPE_Deadlife.Ability_SpawnCorpse</abilityClass>
-    <castTime>120</castTime>
-    <range>15</range>
-	<radius>1.5</radius>
-	<hasAoE>false</hasAoE>
-	<targetMode>Location</targetMode>
+<Defs>
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_DeadlifesacksSTNL</defName>
+		<label>Deadlife sacks</label>
+		<description>Alter yourself or your target to obtain the ability to spew out deadlife dust.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Sacks</iconPath>
+		<castTime>120</castTime>
+		<targetMode>Pawn</targetMode>
+		<range>14</range>
+		<castSound>Explosion_FirefoamPopper</castSound>
+		<needsTicking>true</needsTicking>
+		<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+		<targetingParameters>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+			<canTargetMechs>false</canTargetMechs>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0.40</psyfocusCost>
+				<entropyGain>25</entropyGain>
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_Hediff">
+				<hediff>DeadlifesacksSTNL</hediff>
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>DeadlifeReleasing</effecterDef>
+				<maintainForTicks>60</maintainForTicks>
+				<scale>1</scale>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_ShamblerWipeSTNL</defName>
+		<label>Shambler extinction</label>
+		<description>Dispel all deadlife archites present within allied shamblers in the region, effectively killing them once more.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Shamblerwipe</iconPath>
+		<castTime>180</castTime>
+		<chance>0</chance>
+		<durationTime>0</durationTime>
+		<targetMode>Self</targetMode>
+		<range>0</range>
+		<castSound>VoidTerrorCast</castSound>
+		<needsTicking>true</needsTicking>
+		<abilityClass>VPE_Deadlife.Ability_WipeShambler</abilityClass>
+		<hasAoE>false</hasAoE>
+		<radius>0</radius>
+		<targetingParameters>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>true</canTargetAnimals>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetHumans>true</canTargetHumans>
+			<canTargetItems>true</canTargetItems>
+			<canTargetMechs>false</canTargetMechs>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>1</level>
+				<order>1</order>
+				<psyfocusCost>0</psyfocusCost>
+				<entropyGain>0</entropyGain>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<!-- Level 2 -->
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_CorpseEmergenceSTNL</defName>
+		<label>Deadlife harvest</label>
+		<description>Transform the targeted corpse into deadlife dust and absorb it to obtain increased pain tolerance and regenerative capabilities.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Harvest</iconPath>
+		<castTime>150</castTime>
+		<durationTime>60000</durationTime>
+		<targetMode>Pawn</targetMode>
+		<range>14</range>
+		<chance>0</chance>
+		<castSound>Explosion_FirefoamPopper</castSound>
+		<needsTicking>true</needsTicking>
+		<abilityClass>VPE_Deadlife.Ability_ConsumeBodiesSTNL</abilityClass>
+		<targetingParameters>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>true</canTargetAnimals>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetHumans>true</canTargetHumans>
+			<canTargetItems>true</canTargetItems>
+			<canTargetMechs>false</canTargetMechs>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>2</level>
+				<order>1</order>
+				<psyfocusCost>0.10</psyfocusCost>
+				<entropyGain>25</entropyGain>
+				<prerequisites>
+					<li>VPE_DeadlifesacksSTNL</li>
+					<li>VPE_ShamblerWipeSTNL</li>
+				</prerequisites>
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
+				<onCaster>
+					<li>DeadlifeRegenSTNL</li>
+				</onCaster>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<!-- Level 3 -->
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_CorpseAOESTNL</defName>
+		<label>Corpse skip</label>
+		<description>Skip 9 corpses from distant burial grounds to the selected area.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Grave</iconPath>
+		<abilityClass>VPE_Deadlife.Ability_SpawnCorpse</abilityClass>
+		<castTime>120</castTime>
+		<range>15</range>
+		<radius>1.5</radius>
+		<hasAoE>false</hasAoE>
+		<targetMode>Location</targetMode>
 		<targetingParametersForAoE>
 			<canTargetLocations>true</canTargetLocations>
 			<canTargetSelf>false</canTargetSelf>
@@ -150,153 +147,189 @@
 			<canTargetMechs>false</canTargetMechs>
 			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 		</targetingParameters>
-	<needsTicking>true</needsTicking>
+		<needsTicking>true</needsTicking>
 		<castSound>VPE_Resurrect_Cast</castSound>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_DeadlifeSTNL</path>
-        <level>3</level>
-        <order>1</order>
-        <psyfocusCost>0.35</psyfocusCost>
-        <entropyGain>40</entropyGain>
-        <prerequisites>
-          <li>VPE_CorpseEmergenceSTNL</li>
-        </prerequisites>
-		</li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>3</level>
+				<order>2</order>
+				<psyfocusCost>0.35</psyfocusCost>
+				<entropyGain>40</entropyGain>
+				<prerequisites>
+					<li>VPE_CorpseEmergenceSTNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
 
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_zombifySTNL</defName>
-	<label>Shamblerification</label>
-	<description>Transform the target into a shambler that will fight for the caster's faction.</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/Shamble</iconPath>
-	<castTime>60</castTime>
-	<durationTime>0</durationTime>
-	<chance>0</chance>
-	<targetMode>Pawn</targetMode>
-	<range>14</range>
-	<castSound>VoidTerrorCast</castSound>
-	<needsTicking>true</needsTicking>
-	<abilityClass>VPE_Deadlife.Ability_Zombify</abilityClass>
-	<targetingParameters>
-		<canTargetLocations>false</canTargetLocations>
-		<canTargetSelf>true</canTargetSelf>
-		<canTargetAnimals>true</canTargetAnimals>
-		<canTargetPawns>true</canTargetPawns>
-		<canTargetHumans>true</canTargetHumans>
-		<canTargetItems>true</canTargetItems>
-		<canTargetMechs>false</canTargetMechs>
-		<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-	</targetingParameters>
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>4</level>
-			<order>1</order>
-			<psyfocusCost>0.09</psyfocusCost>
-			<entropyGain>0</entropyGain>
-			<prerequisites>
-				<li>VPE_CorpseAOESTNL</li>
-			</prerequisites>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
-  
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_zombifyAOESTNL</defName>
-	<label>Mass shamblerification</label>
-	<description>Corrupt the body of creatures near the target area to cause them to fall victim of a twisted mutation.\n\nAfflicted creatures will join the caster's faction and turn into shamblers</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/ShambleAOE</iconPath>
-	<castTime>180</castTime>
-	<durationTime>0</durationTime>
-	<chance>0</chance>
-	<targetMode>Pawn</targetMode>
-	<range>14</range>
-	<castSound>VoidTerrorCast</castSound>
-	<needsTicking>true</needsTicking>
-	<abilityClass>VPE_Deadlife.Ability_Zombify</abilityClass>
-	<hasAoE>True</hasAoE>
-	<radius>2.5</radius>
-	<targetingParametersForAoE>
-		<canTargetLocations>false</canTargetLocations>
-		<canTargetSelf>false</canTargetSelf>
-		<canTargetAnimals>true</canTargetAnimals>
-		<canTargetPawns>true</canTargetPawns>
-		<canTargetHumans>true</canTargetHumans>
-		<canTargetItems>true</canTargetItems>
-		<canTargetMechs>false</canTargetMechs>
-		<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-	</targetingParametersForAoE>
-	<targetingParameters>
-		<canTargetLocations>true</canTargetLocations>
-		<canTargetSelf>false</canTargetSelf>
-		<canTargetAnimals>true</canTargetAnimals>
-		<canTargetPawns>true</canTargetPawns>
-		<canTargetHumans>true</canTargetHumans>
-		<canTargetItems>true</canTargetItems>
-		<canTargetMechs>false</canTargetMechs>
-		<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-	</targetingParameters>
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>5</level>
-			<order>1</order>
-			<psyfocusCost>0.29</psyfocusCost>
-			<entropyGain>50</entropyGain>
-			<prerequisites>
-				<li>VPE_zombifySTNL</li>
-			</prerequisites>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
-
-	 
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_DeadlifecloudSTNL</defName>
-	<label>Deadlife cloud</label>
-	<description>Manifest a leaking deadlife shell to resurrect shamblers at range.</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/Cloud</iconPath>
-	<castTime>15</castTime>
-	<range>15.5</range>
-	<castSound>Psycast_Skip_Exit</castSound>
-	<targetMode>Location</targetMode>
-	<abilityClass>VEF.Abilities.Ability_Spawn</abilityClass>
-	<needsTicking>true</needsTicking>
-	<chance>0</chance>
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>4</level>
-			<order>2</order>
-			<psyfocusCost>0.09</psyfocusCost>
-			<entropyGain>20</entropyGain>
-			<prerequisites>
-				<li>VPE_CorpseAOESTNL</li>
-			</prerequisites>
-		</li>
-		<li Class="VEF.Abilities.AbilityExtension_Spawn">
-			<thing>Shell_Deadlife_ReleasingSTNL</thing>
-		</li>
-		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
-			<effecterDef>Skip_ExitNoDelay</effecterDef>
-			<maintainForTicks>60</maintainForTicks>
-			<scale>1</scale>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
-
-  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <defName>VPE_ExtendedRessurectionSTNL</defName>
-    <label>Permanent deadlife resurrection</label>
-    <description>Raise nearby corpses as shamblers by infusing them with altered deadlife archites, these archites will halt the shambler's decay.\n\nShamblers raised by this ability will persist until killed again, using this ability on owned shamblers will fully heal them.</description>
-    <iconPath>UI_DeadlifeSTNL/Abilities/Zombie</iconPath>
-    <abilityClass>VPE_Deadlife.Ability_ResurrectZombieSTNL</abilityClass>
-	<chance>0</chance>
-    <castTime>120</castTime>
-    <range>25.5</range>
-	<radius>3.5</radius>
+			<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_zombifySTNL</defName>
+		<label>Shamblerification</label>
+		<description>Mutate the target creature into a shambler that will fight for the caster's faction.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Shamble</iconPath>
+		<castTime>60</castTime>
+		<durationTime>0</durationTime>
+		<chance>0</chance>
+		<targetMode>Pawn</targetMode>
+		<range>14</range>
+		<castSound>VoidTerrorCast</castSound>
+		<needsTicking>true</needsTicking>
+		<abilityClass>VPE_Deadlife.Ability_Zombify</abilityClass>
+		<targetingParameters>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetSelf>true</canTargetSelf>
+			<canTargetAnimals>true</canTargetAnimals>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetHumans>true</canTargetHumans>
+			<canTargetItems>true</canTargetItems>
+			<canTargetMechs>false</canTargetMechs>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>3</level>
+				<order>3</order>
+				<psyfocusCost>0.09</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>VPE_CorpseEmergenceSTNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_zombifyAOESTNL</defName>
+		<label>Mass shamblerification</label>
+		<description>Corrupt the body of creatures near the target area to cause them to fall victim of a twisted mutation.\n\nAfflicted creatures will join the caster's faction and turn into shamblers.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/ShambleAOE</iconPath>
+		<castTime>180</castTime>
+		<durationTime>0</durationTime>
+		<chance>0</chance>
+		<targetMode>Pawn</targetMode>
+		<range>14</range>
+		<castSound>VoidTerrorCast</castSound>
+		<needsTicking>true</needsTicking>
+		<abilityClass>VPE_Deadlife.Ability_Zombify</abilityClass>
+		<hasAoE>True</hasAoE>
+		<radius>2.5</radius>
+		<targetingParametersForAoE>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>true</canTargetAnimals>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetHumans>true</canTargetHumans>
+			<canTargetItems>true</canTargetItems>
+			<canTargetMechs>false</canTargetMechs>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParametersForAoE>
+		<targetingParameters>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>true</canTargetAnimals>
+			<canTargetPawns>true</canTargetPawns>
+			<canTargetHumans>true</canTargetHumans>
+			<canTargetItems>true</canTargetItems>
+			<canTargetMechs>false</canTargetMechs>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>2</level>
+				<order>3</order>
+				<psyfocusCost>0.29</psyfocusCost>
+				<entropyGain>50</entropyGain>
+				<prerequisites>
+					<li>VPE_zombifySTNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<!-- Level 4 -->
+		<VEF.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+		<defName>VPE_Deadlife_WorkerShamblerConversion_STNL</defName>
+		<label>Deadlife servant</label>
+		<description>Resurrect and convert a dead humanlike creature into a deadlife servant.\n\nThe work speed of deadlife servants depends on their master's psychic sensitivity.\n\nShould their master die, their servants will become inanimate once more.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Ability_DeadlifeServant</iconPath>
+		<abilityClass>VPE_Deadlife.Ability_DeadlifeServitude</abilityClass>
+		<chance>0</chance>
+		<castTime>120</castTime>
+		<range>9999</range>
+		<radius>0</radius>
+		<hasAoE>false</hasAoE>
+		<targetMode>Thing</targetMode>
+		<targetingParameters>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetHumans>false</canTargetHumans>
+			<canTargetMechs>false</canTargetMechs>
+			<canTargetItems>true</canTargetItems>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParameters>
+		<needsTicking>true</needsTicking>
+		<castSound>VPE_Resurrect_Cast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>4</level>
+				<order>1</order>
+				<psyfocusCost>0.30</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>VPE_CorpseAOESTNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_DeadlifecloudSTNL</defName>
+		<label>Deadlife cloud</label>
+		<description>Manifest a leaking deadlife shell to resurrect fallen creatures at range.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Cloud</iconPath>
+		<castTime>15</castTime>
+		<range>25.9</range>
+		<radius>7.9</radius>
+		<castSound>Psycast_Skip_Exit</castSound>
+		<targetMode>Location</targetMode>
+		<abilityClass>VEF.Abilities.Ability_Spawn</abilityClass>
+		<needsTicking>true</needsTicking>
+		<chance>0</chance>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>4</level>
+				<order>2</order>
+				<psyfocusCost>0.04</psyfocusCost>
+				<entropyGain>35</entropyGain>
+				<prerequisites>
+					<li>VPE_CorpseAOESTNL</li>
+				</prerequisites>
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_Spawn">
+				<thing>Shell_Deadlife_ReleasingSTNL</thing>
+			</li>
+			<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+				<effecterDef>Skip_ExitNoDelay</effecterDef>
+				<maintainForTicks>60</maintainForTicks>
+				<scale>1</scale>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_ExtendedRessurectionSTNL</defName>
+		<label>Permanent deadlife resurrection</label>
+		<description>Raise nearby corpses as shamblers by infusing them with altered deadlife archites, these archites will halt the shambler's decay.\n\nShamblers raised by this ability will persist until killed again, using this ability on owned shamblers will fully heal them.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Zombie</iconPath>
+		<abilityClass>VPE_Deadlife.Ability_ResurrectZombieSTNL</abilityClass>
+		<chance>0</chance>
+		<castTime>120</castTime>
+		<range>25.5</range>
+		<radius>3.5</radius>
 		<targetingParameters>
 			<canTargetLocations>true</canTargetLocations>
 			<canTargetSelf>true</canTargetSelf>
@@ -308,188 +341,213 @@
 			<thingCategory>Item</thingCategory>
 			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 		</targetingParameters>
-	<needsTicking>true</needsTicking>
+		<needsTicking>true</needsTicking>
 		<castSound>VPE_Resurrect_Cast</castSound>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_DeadlifeSTNL</path>
-        <level>4</level>
-        <order>2</order>
-        <psyfocusCost>0.15</psyfocusCost>
-        <entropyGain>120</entropyGain>
-        <prerequisites>
-          <li>VPE_DeadlifecloudSTNL</li>
-        </prerequisites>
-		</li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
-
-	 
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_ResurrectSTNL</defName>
-	<label>Pure deadlife resurrection</label>
-	<description>Resurrect the fallen target creature by infusing them with condensed deadlife archites.\n\nThe process is heavily taxing for the caster, as a result, their psychic sensitivity will be nullified for a day after using this ability.</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/TrueRevive</iconPath>
-	<abilityClass>VPE_Deadlife.Ability_ResurrectSTNL</abilityClass>
-	<castTime>120</castTime>
-	<durationTime>75000</durationTime>
-	<range>15</range>
-	<needsTicking>true</needsTicking>
-	<targetingParameters>
-		<canTargetLocations>False</canTargetLocations>
-		<canTargetSelf>true</canTargetSelf>
-		<canTargetAnimals>true</canTargetAnimals>
-		<canTargetPawns>true</canTargetPawns>
-		<canTargetHumans>False</canTargetHumans>
-		<canTargetItems>true</canTargetItems>
-		<canTargetMechs>false</canTargetMechs>
-		<thingCategory>Item</thingCategory>
-		<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-	</targetingParameters>
-	<castSound>VPE_Resurrect_Cast</castSound>
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>5</level>
-			<order>1</order>
-			<psyfocusCost>0</psyfocusCost>
-			<entropyGain>0</entropyGain>
-			<prerequisites>
-				<li>VPE_DeadlifecloudSTNL</li>
-			</prerequisites>
-		</li>
-		<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
-			<onCaster>
-				<li>PsychicBurnoutSTNL</li>
-			</onCaster>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
-  
-  <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <defName>VPE_ResurrectAOESTNL</defName>
-    <label>Mass deadlife resurrection</label>
-    <description>Infuse the corpses of fallen creatures near the target area with condensed deadlife archites to resurrect them.\n\nCondensing a large concentration of archites will cause the caster's psychic abilities to be nullified for 11 days.</description>
-    <iconPath>UI_DeadlifeSTNL/Abilities/TrueReviveAOE</iconPath>
-    <abilityClass>VPE_Deadlife.Ability_ResurrectSTNL</abilityClass>
-    <castTime>120</castTime>
-    <range>15.5</range>
-	<radius>1.5</radius>
-	<durationTime>675000</durationTime>
-	<hasAoE>true</hasAoE>
-		<targetingParametersForAoE>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>4</level>
+				<order>3</order>
+				<psyfocusCost>0.15</psyfocusCost>
+				<entropyGain>120</entropyGain>
+				<prerequisites>
+					<li>VPE_DeadlifecloudSTNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<!-- Level 5 -->
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
+		<defName>VPE_Deadlife_WorkerShambler_CrimsonBuff_STNL</defName>
+		<label>Crimson affliction</label>
+		<description>Deadlife servant upgrade: Servants will now inflict dustborne necrosis upon dealing melee damage, dustborne necrosis steadily increases over time unless tended. Should the infected perish, they will resurrect as a shambler and fight for this psycaster's faction.\n\nAdditionally, servants who die while this passive is active will release a cloud of crimson deadlife dust, which will cause dustborne necrosis buildup in nearby creatures.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Ability_Passive_CrimsonAffliction</iconPath>
+		<abilityClass>VPE_Deadlife.Ability_Passive_CrimsonAffliction</abilityClass>
+		<castSound>VPE_Resurrect_Cast</castSound>
+		<castTime>120</castTime>
+		<range>9999</range>
+		<radius>0</radius>
+		<showUndrafted>True</showUndrafted>
+		<hasAoE>false</hasAoE>
+		<targetMode>Thing</targetMode>
+		<targetingParameters>
+			<canTargetLocations>false</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetHumans>false</canTargetHumans>
+			<canTargetMechs>false</canTargetMechs>
+			<canTargetItems>true</canTargetItems>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParameters>
+		<needsTicking>true</needsTicking>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>5</level>
+				<order>1</order>
+				<psyfocusCost>0.30</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>VPE_Deadlife_WorkerShamblerConversion_STNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_ResurrectSTNL</defName>
+		<label>Pure deadlife resurrection</label>
+		<description>Resurrect the fallen target creature by infusing them with condensed deadlife archites.\n\nThe process is heavily taxing for the caster, as a result, their psychic sensitivity will be nullified for a day after using this ability.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/TrueRevive</iconPath>
+		<abilityClass>VPE_Deadlife.Ability_ResurrectSTNL</abilityClass>
+		<castTime>120</castTime>
+		<chance>0</chance>
+		<range>15</range>
+		<needsTicking>true</needsTicking>
+		<targetingParameters>
 			<canTargetLocations>False</canTargetLocations>
 			<canTargetSelf>true</canTargetSelf>
 			<canTargetAnimals>true</canTargetAnimals>
 			<canTargetPawns>true</canTargetPawns>
-			<canTargetHumans>False</canTargetHumans>
-			<canTargetItems>true</canTargetItems>
-			<canTargetMechs>false</canTargetMechs>
-			<thingCategory>Item</thingCategory>
-			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-		</targetingParametersForAoE>
-		<targetingParameters>
-			<canTargetLocations>true</canTargetLocations>
-			<canTargetSelf>true</canTargetSelf>
-			<canTargetAnimals>true</canTargetAnimals>
-			<canTargetPawns>true</canTargetPawns>
-			<canTargetHumans>False</canTargetHumans>
+			<canTargetHumans>false</canTargetHumans>
 			<canTargetItems>true</canTargetItems>
 			<canTargetMechs>false</canTargetMechs>
 			<thingCategory>Item</thingCategory>
 			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 		</targetingParameters>
-	<needsTicking>true</needsTicking>
 		<castSound>VPE_Resurrect_Cast</castSound>
-    <modExtensions>
-      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-        <path>VPE_DeadlifeSTNL</path>
-        <level>5</level>
-        <order>1</order>
-        <psyfocusCost>0</psyfocusCost>
-        <entropyGain>0</entropyGain>
-        <prerequisites>
-          <li>VPE_ResurrectSTNL</li>
-        </prerequisites>
-		</li>
-		<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
-<onCaster>
-<li>PsychicBurnoutSTNL</li>
-</onCaster>
-</li>
-    </modExtensions>
-  </VEF.Abilities.AbilityDef>
-	 
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_Deadlife_CrimsonDeadlifeBurst_STNL</defName>
-	<label>Crimson deadlife burst</label>
-	<description>Form a cloud of altered deadlife dust that will infect creatures without sufficient toxic environment resistance with dustborne necrosis, causing them to turn into shamblers should they die while afflicted by this condition.</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/CrimsonDeadlifeBurst</iconPath>
-	<castTime>60</castTime>
-	<range>28.9</range>
-	<radius>9.9</radius>
-	<castSound>Psycast_Skip_Exit</castSound>
-	<targetMode>Location</targetMode>
-	<targetingParameters>
-		<canTargetLocations>true</canTargetLocations>
-		<canTargetSelf>false</canTargetSelf>
-		<canTargetAnimals>false</canTargetAnimals>
-		<canTargetPawns>false</canTargetPawns>
-		<canTargetHumans>false</canTargetHumans>
-		<canTargetItems>false</canTargetItems>
-		<canTargetMechs>false</canTargetMechs>
-		<!-- <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable> -->
-	</targetingParameters>
-	<abilityClass>VPE_Deadlife.Ability_CrimsonDeadlifeBurst</abilityClass>
-	<needsTicking>true</needsTicking>
-	<!-- <chance>0</chance> -->
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>6</level>
-			<order>1</order>
-			<psyfocusCost>0.09</psyfocusCost>
-			<entropyGain>75</entropyGain>
-			<prerequisites>
-				<li>VPE_zombifyAOESTNL</li>
-			</prerequisites>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
-	 
-<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-	<defName>VPE_CrimsonStormSTNL</defName>
-	<label>Crimson deadlife storm</label>
-	<description>Hack a distant engine of unknown origins to corrupt it and cause a deadlife storm in the area.\n\nThe shamblers raised by this condition will join the caster's faction.</description>
-	<iconPath>UI_DeadlifeSTNL/Abilities/Storm</iconPath>
-	<abilityClass>SentinelFramework_STNL.Ability_ForceCondition</abilityClass>
-	<castTime>180</castTime>
-	<durationTime>90000</durationTime>
-	<durationTimeStatFactors>
-	<PsychicSensitivity>1</PsychicSensitivity>
-	</durationTimeStatFactors>
-	<needsTicking>true</needsTicking>
-	<targetMode>Self</targetMode>
-	<castSound>PsychicShockLanceCast</castSound>
-	<showUndrafted>true</showUndrafted>
-	<modExtensions>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-			<path>VPE_DeadlifeSTNL</path>
-			<level>6</level>
-			<order>2</order>
-			<psyfocusCost>0.4</psyfocusCost>
-			<entropyGain>0</entropyGain>
-			<prerequisites>
-				<li>VPE_ResurrectSTNL</li>
-				<li>VPE_Deadlife_CrimsonDeadlifeBurst_STNL</li>
-			</prerequisites>
-		</li>
-		<li Class="SentinelFramework_STNL.AbilityForceCondiExt">
-			<conditionDef>FriendDeathPallDeadlifeSTNL</conditionDef>
-			<global>false</global>
-			<scaleDuraWithSensi>true</scaleDuraWithSensi>
-			<aiCanUse>false</aiCanUse>
-		</li>
-	</modExtensions>
-</VEF.Abilities.AbilityDef>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>5</level>
+				<order>1</order>
+				<psyfocusCost>0.30</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>VPE_DeadlifecloudSTNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_ResurrectAOESTNL</defName>
+		<label>Mass deadlife resurrection</label>
+		<description>Infuse the corpses of fallen creatures near the target area with condensed deadlife archites to resurrect them.\n\nCondensing a large concentration of archites will cause the caster's psychic abilities to be nullified for 11 days.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/TrueReviveAOE</iconPath>
+		<abilityClass>VPE_Deadlife.Ability_ResurrectSTNL</abilityClass>
+		<castTime>120</castTime>
+		<range>15.5</range>
+		<radius>1.5</radius>
+		<chance>0</chance>
+		<targetMode>Location</targetMode>
+		<hasAoE>true</hasAoE>
+		<targetingParametersForAoE>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetHumans>false</canTargetHumans>
+			<canTargetMechs>false</canTargetMechs>
+			<canTargetItems>true</canTargetItems>
+			<thingCategory>Item</thingCategory>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParametersForAoE>
+		<targetingParameters>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetHumans>false</canTargetHumans>
+			<canTargetItems>false</canTargetItems>
+			<canTargetMechs>false</canTargetMechs>
+			<!-- <thingCategory>Item</thingCategory> -->
+			<!-- <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable> -->
+		</targetingParameters>
+		<needsTicking>true</needsTicking>
+		<castSound>VPE_Resurrect_Cast</castSound>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>5</level>
+				<order>1</order>
+				<psyfocusCost>0.80</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>VPE_ResurrectSTNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<!-- Level 6 -->
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_Deadlife_CrimsonDeadlifeBurst_STNL</defName>
+		<label>Crimson deadlife burst</label>
+		<description>Form a cloud of altered deadlife dust that will infect creatures without sufficient toxic environment resistance with dustborne necrosis, causing them to turn into shamblers should they die while afflicted by this condition.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/CrimsonDeadlifeBurst</iconPath>
+		<castTime>60</castTime>
+		<range>28.9</range>
+		<radius>9.9</radius>
+		<castSound>Psycast_Skip_Exit</castSound>
+		<targetMode>Location</targetMode>
+		<targetingParameters>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetSelf>false</canTargetSelf>
+			<canTargetAnimals>false</canTargetAnimals>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetHumans>false</canTargetHumans>
+			<canTargetItems>false</canTargetItems>
+			<canTargetMechs>false</canTargetMechs>
+			<!-- <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable> -->
+		</targetingParameters>
+		<abilityClass>VPE_Deadlife.Ability_CrimsonDeadlifeBurst</abilityClass>
+		<needsTicking>true</needsTicking>
+		<!-- <chance>0</chance> -->
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>6</level>
+				<order>1</order>
+				<psyfocusCost>0.09</psyfocusCost>
+				<entropyGain>75</entropyGain>
+				<prerequisites>
+					<li>VPE_Deadlife_WorkerShambler_CrimsonBuff_STNL</li>
+				</prerequisites>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
+	<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>VPE_CrimsonStormSTNL</defName>
+		<label>Crimson deadlife storm</label>
+		<description>Hack a distant engine of unknown origins to corrupt and induce it to cause a deadlife storm in the area.\n\nThe shamblers raised by this condition will join the caster's faction.</description>
+		<iconPath>UI_DeadlifeSTNL/Abilities/Storm</iconPath>
+		<abilityClass>SentinelFramework_STNL.Ability_ForceCondition</abilityClass>
+		<castTime>180</castTime>
+		<durationTime>90000</durationTime>
+		<durationTimeStatFactors>
+			<PsychicSensitivity>1</PsychicSensitivity>
+		</durationTimeStatFactors>
+		<needsTicking>true</needsTicking>
+		<targetMode>Self</targetMode>
+		<castSound>PsychicShockLanceCast</castSound>
+		<showUndrafted>true</showUndrafted>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_DeadlifeSTNL</path>
+				<level>6</level>
+				<order>2</order>
+				<psyfocusCost>0.4</psyfocusCost>
+				<entropyGain>0</entropyGain>
+				<prerequisites>
+					<li>VPE_ResurrectSTNL</li>
+					<li>VPE_Deadlife_CrimsonDeadlifeBurst_STNL</li>
+				</prerequisites>
+			</li>
+			<li Class="SentinelFramework_STNL.AbilityForceCondiExt">
+				<conditionDef>FriendDeathPallDeadlifeSTNL</conditionDef>
+				<global>false</global>
+				<scaleDuraWithSensi>true</scaleDuraWithSensi>
+				<aiCanUse>false</aiCanUse>
+			</li>
+		</modExtensions>
+	</VEF.Abilities.AbilityDef>
 </Defs>

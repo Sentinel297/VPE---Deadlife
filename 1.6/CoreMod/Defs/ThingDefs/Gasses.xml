@@ -14,9 +14,11 @@
 		</graphicData>
 		<rotatable>false</rotatable>
 		<comps>
-			<li Class="CompProperties_GrayStatueGasSTNL">
-				<gas>DeadlifeDust</gas>
-				<triggerRadiusRange>200</triggerRadiusRange>
+			<li Class="SentinelFramework_STNL.CompProps_GasEmitter">
+				<gasType>DeadlifeDust</gasType>
+				<radius>7.9</radius>
+				<deadlifeGasQuantity>500</deadlifeGasQuantity>
+				<radiusColor>(0.7,0.7,0.7)</radiusColor>
 			</li>
 			<li Class="CompProperties_DestroyAfterDelay">
 				<delayTicks>600</delayTicks>
@@ -25,32 +27,25 @@
 	</ThingDef>
 	
 	<!-- Actual gasses -->
-	
-<ThingDef Name="VPE_Deadlife_CrimsonDeadlifeDustBase_STNL" Abstract="True">
-	<thingClass>VPE_Deadlife.CustomGas_Deadlife_STNL</thingClass>
-	<label>gas</label>
-	<category>Gas</category>
-	<altitudeLayer>Gas</altitudeLayer>
-	<useHitPoints>false</useHitPoints>
-	<tickerType>Normal</tickerType>
-    <graphicData>
-      <graphicClass>Graphic_Gas</graphicClass>
-      <shaderType>Transparent</shaderType>
-    </graphicData>
-</ThingDef>
 
-<ThingDef ParentName="VPE_Deadlife_CrimsonDeadlifeDustBase_STNL">
+<ThingDef ParentName="VPE_SentinelFramework_Gas_STNL">
 	<defName>VPE_Deadlife_CrimsonDeadlifeDust_STNL</defName>
 	<label>Crimson deadlife dust</label>
-    <graphicData>
-      <texPath>Things/Mote/Smoke</texPath>
-      <drawSize>4</drawSize>
-      <color>(0.5, 0.2, 0.2, 1)</color>
-    </graphicData>
+	<thingClass>VPE_Deadlife.CustomGas_Deadlife_STNL</thingClass>
+	<graphicData>
+		<texPath>Things/Mote/Smoke</texPath>
+		<drawSize>4</drawSize>
+		<color>(0.5, 0.2, 0.2, 1)</color>
+	</graphicData>
 	<gas>
 		<expireSeconds>19~21</expireSeconds>
 		<rotationSpeed>10</rotationSpeed>
 	</gas>
+	<modExtensions>
+		<li Class="SentinelFramework_STNL.GasModExt">
+			<gasEffectDelay>10</gasEffectDelay>
+		</li>
+	</modExtensions>
 </ThingDef>
 
 <!-- Corpse converter -->

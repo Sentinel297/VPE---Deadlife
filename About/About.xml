@@ -35,10 +35,10 @@
 		<li>Ludeon.RimWorld.Biotech</li>
 		<li>Ludeon.RimWorld.Anomaly</li>
 		<li>Ludeon.RimWorld.Odyssey</li>
+		<li>VPE.Framework.Sentinel</li>
 		<li>brrainz.harmony</li>
 		<li>VanillaExpanded.VPsycastsE</li>
 		<li>vanillaexpanded.achievements</li>
-		<li>VPE.Framework.Sentinel</li>
 	</loadAfter>
 	<description>
 </description>
