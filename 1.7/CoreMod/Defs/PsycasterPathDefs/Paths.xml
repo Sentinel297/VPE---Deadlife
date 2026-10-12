@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VanillaPsycastsExpanded.PsycasterPathDef>
+    <defName>VPE_DeadlifeSTNL</defName>
+    <label>Deadlife</label>
+    <description>Control the deadlife dust to create your army of rotting corpses.</description>
+    <background>UI_DeadlifeSTNL/Tree/Deadlifetreebase</background>
+    <altBackground>UI_DeadlifeSTNL/Tree/Deadlifetreebase</altBackground>
+    <tab>Misc</tab>
+    <tooltip>Control the deadlife dust to create your army of rotting corpses.</tooltip>
+  </VanillaPsycastsExpanded.PsycasterPathDef>
+
+</Defs>

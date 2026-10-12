@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+    <GameConditionDef>
+    <defName>FriendDeathPallDeadlifeSTNL</defName>
+    <conditionClass>VPE_Deadlife.GameCondition_FriendDeathPallDeadlifeSTNL</conditionClass>
+    <label>Crimson Death Pall Storm</label>
+    <letterText>The dead will rise...For your side that is.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <weatherDef>CrimsonDeathPallSTNL</weatherDef>
+    <canBePermanent>true</canBePermanent>
+    <natural>false</natural>
+    <allowUnderground>false</allowUnderground>
+  </GameConditionDef>
+</Defs>

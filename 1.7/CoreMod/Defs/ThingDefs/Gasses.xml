@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef>
+		<defName>Shell_Deadlife_ReleasingSTNL</defName>
+		<label>deadlife capsule</label>
+		<selectable>false</selectable>
+		<tickerType>Normal</tickerType>
+		<thingClass>ThingWithComps</thingClass>
+		<useHitPoints>false</useHitPoints>
+		<graphicData>
+			<texPath>Things/Projectile/LandedDeadlifeShell</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
+		<rotatable>false</rotatable>
+		<comps>
+			<li Class="SentinelFramework_STNL.CompProps_GasEmitter">
+				<gasType>DeadlifeDust</gasType>
+				<radius>7.9</radius>
+				<deadlifeGasQuantity>500</deadlifeGasQuantity>
+				<radiusColor>(0.7,0.7,0.7)</radiusColor>
+			</li>
+			<li Class="CompProperties_DestroyAfterDelay">
+				<delayTicks>600</delayTicks>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	<!-- Actual gasses -->
+
+<ThingDef ParentName="VPE_SentinelFramework_Gas_STNL">
+	<defName>VPE_Deadlife_CrimsonDeadlifeDust_STNL</defName>
+	<label>Crimson deadlife dust</label>
+	<thingClass>VPE_Deadlife.CustomGas_Deadlife_STNL</thingClass>
+	<graphicData>
+		<texPath>Things/Mote/Smoke</texPath>
+		<drawSize>4</drawSize>
+		<color>(0.5, 0.2, 0.2, 1)</color>
+	</graphicData>
+	<gas>
+		<expireSeconds>19~21</expireSeconds>
+		<rotationSpeed>10</rotationSpeed>
+	</gas>
+	<modExtensions>
+		<li Class="SentinelFramework_STNL.GasModExt">
+			<gasEffectDelay>10</gasEffectDelay>
+		</li>
+	</modExtensions>
+</ThingDef>
+
+<!-- Corpse converter -->
+
+<ThingDef ParentName="EtherealThingBase">
+	<defName>VPE_Deadlife_CorpseConverter_STNL</defName>
+	<label>Deadlife particles</label>
+	<thingClass>VPE_Deadlife.Thing_ShamblerConverter</thingClass>
+	<tickerType>Normal</tickerType>
+	<drawerType>RealtimeOnly</drawerType>
+	<drawOffscreen>true</drawOffscreen>
+	<!-- <category>PsychicEmitter</category> -->
+	<altitudeLayer>MoteOverheadLow</altitudeLayer>
+	<selectable>false</selectable>
+	<building>
+		<isInert>true</isInert>
+		<claimable>true</claimable>
+		<deconstructible>false</deconstructible>
+	</building>
+	<graphicData>
+		<graphicClass>Graphic_Single</graphicClass>
+		<texPath>UI_DeadlifeSTNL/None</texPath>
+		<!-- <shaderType>MoteGlowDistorted</shaderType> -->
+		<!-- <color>(255, 255, 245)</color> -->
+		<!-- <drawSize>6</drawSize> -->
+	</graphicData>
+	<!-- <comps> -->
+	<!-- <li Class="CompProperties_Glower"> -->
+	<!-- <glowRadius>30</glowRadius> -->
+	<!-- <overlightRadius>18</overlightRadius> -->
+	<!-- <glowColor>(217,217,208,0)</glowColor> -->
+	<!-- </li> -->
+	<!-- <li Class="CompProperties_HeatPusher"> -->
+	<!-- <compClass>CompHeatPusherPowered</compClass> -->
+	<!-- <heatPerSecond>20</heatPerSecond> -->
+	<!-- <heatPushMaxTemperature>60</heatPushMaxTemperature> -->
+	<!-- </li> -->
+	<!-- </comps> -->
+</ThingDef>
+</Defs>
