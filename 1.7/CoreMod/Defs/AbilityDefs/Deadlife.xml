@@ -125,18 +125,19 @@
 		<castTime>120</castTime>
 		<range>15</range>
 		<radius>1.5</radius>
+		<chance>0</chance>
 		<hasAoE>false</hasAoE>
 		<targetMode>Location</targetMode>
-		<targetingParametersForAoE>
-			<canTargetLocations>true</canTargetLocations>
-			<canTargetSelf>false</canTargetSelf>
-			<canTargetAnimals>false</canTargetAnimals>
-			<canTargetPawns>false</canTargetPawns>
-			<canTargetHumans>False</canTargetHumans>
-			<canTargetItems>false</canTargetItems>
-			<canTargetMechs>false</canTargetMechs>
-			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
-		</targetingParametersForAoE>
+		<!-- <targetingParametersForAoE> -->
+			<!-- <canTargetLocations>true</canTargetLocations> -->
+			<!-- <canTargetSelf>false</canTargetSelf> -->
+			<!-- <canTargetAnimals>false</canTargetAnimals> -->
+			<!-- <canTargetPawns>false</canTargetPawns> -->
+			<!-- <canTargetHumans>False</canTargetHumans> -->
+			<!-- <canTargetItems>false</canTargetItems> -->
+			<!-- <canTargetMechs>false</canTargetMechs> -->
+			<!-- <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable> -->
+		<!-- </targetingParametersForAoE> -->
 		<targetingParameters>
 			<canTargetLocations>true</canTargetLocations>
 			<canTargetSelf>false</canTargetSelf>

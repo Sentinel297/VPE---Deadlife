@@ -237,6 +237,9 @@
 		<li Class="VPE_Deadlife.DeadlifeServant_ModExt">
 			<needsToMax>
 				<li MayRequire="rim.job.world">Sex</li>
+				<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
+				<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
+				<li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
 			</needsToMax>
 		</li>
 	</modExtensions>

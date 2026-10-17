@@ -6,6 +6,8 @@
       <!-- <li>Shooting</li> -->
     <!-- </workDisables> -->
     <consideredSubhuman>true</consideredSubhuman>
+	<disableApparel>false</disableApparel>
+	<disableIdeo>false</disableIdeo>
     <canCarryPawns>true</canCarryPawns>
     <canTend>true</canTend>
     <canOwnCaravan>true</canOwnCaravan>
@@ -41,6 +43,7 @@
       <li>FloatMenuOptionProvider_FromThing</li>
 	  <li>FloatMenuOptionProvider_FromZone</li>
 	  <li>FloatMenuOptionProvider_WorkGivers</li>
+	  <li>FloatMenuOptionProvider_Wear</li>
     </whitelistedFloatMenuProviders>
     <preventsMentalBreaks>true</preventsMentalBreaks>
     <disablesIdeo>true</disablesIdeo>
