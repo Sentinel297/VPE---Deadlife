@@ -11,7 +11,8 @@
 	<disablePolicies>false</disablePolicies>
 	<disableTitles>true</disableTitles>
 	<disableNeeds>true</disableNeeds>
-	<canCarryPawns>true</canCarryPawns>
+	<!-- Bugged as of 22/11/26, has to be false in order to carry pawns -->
+	<canCarryPawns>false</canCarryPawns>
 	<canTend>true</canTend>
 	<canOwnCaravan>true</canOwnCaravan>
 	<breathesAir>false</breathesAir>
